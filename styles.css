@@ -444,7 +444,7 @@ h1, h2, h3, h4 {
 /* --- Pitch Section --- */
 .pitch {
     padding: 6rem 0;
-    background-color: var(--bg-primary); /* Alternating background color from about */
+    background-color: var(--bg-secondary); /* Alternating background color from about */
 }
 
 .pitch-grid {
@@ -489,6 +489,7 @@ h1, h2, h3, h4 {
 /* --- Projects Section --- */
 .projects {
     padding: 6rem 0;
+    background-color: var(--bg-primary);
 }
 
 .projects-grid {
@@ -764,10 +765,170 @@ footer p {
     box-shadow: 0 15px 35px rgba(0, 243, 255, 0.15);
 }
 
+/* --- Education & Certifications Section --- */
+.edu-cert {
+    padding: 6rem 0;
+    background-color: var(--bg-primary);
+}
+
+.edu-cert-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 5px;
+    bottom: 5px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent-cyan), var(--accent-purple));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: calc(-2rem - 5px);
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 8px var(--accent-cyan);
+    transition: all var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-dot {
+    background: var(--accent-purple);
+    border-color: var(--accent-purple);
+    box-shadow: 0 0 8px var(--accent-purple);
+}
+
+.timeline-content {
+    background: var(--bg-secondary);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all var(--transition-medium);
+}
+
+.timeline-content:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 5px 15px rgba(0, 243, 255, 0.1);
+}
+
+.timeline-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-cyan);
+    margin-bottom: 0.3rem;
+}
+
+.timeline-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.timeline-institution {
+    font-size: 0.95rem;
+    color: var(--accent-purple);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Certifications */
+.cert-card {
+    background: var(--bg-secondary);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    text-align: center;
+    transition: all var(--transition-medium);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-purple);
+    box-shadow: 0 10px 25px rgba(188, 19, 254, 0.15);
+}
+
+.cert-icon {
+    font-size: 3.5rem;
+    color: var(--accent-cyan);
+    margin-bottom: 1.5rem;
+    filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.3));
+}
+
+.cert-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.cert-issuer {
+    font-size: 1rem;
+    color: var(--accent-purple);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.cert-text {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.cert-badge {
+    background: rgba(0, 243, 255, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(0, 243, 255, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+    margin-bottom: 0.8rem;
+}
+
+.cert-id {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
     .headline { font-size: 2.2rem; }
-    .hero-container, .about-content, .contact-container {
+    .hero-container, .about-content, .contact-container, .edu-cert-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
